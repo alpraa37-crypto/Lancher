@@ -1,10 +1,13 @@
 workflows:
   android-launcher:
     name: Android Launcher
+    environment:
+      android:
+        sdk: 33
     scripts:
       - name: Build APK
         script: |
           chmod +x ./gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug || gradle assembleDebug
     artifacts:
       - app/build/outputs/apk/debug/app-debug.apk
