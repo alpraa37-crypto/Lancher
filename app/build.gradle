@@ -3,24 +3,24 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 31
     namespace 'com.example.launcher'
 
     defaultConfig {
         applicationId "com.example.launcher"
         minSdk 21
-        targetSdk 33
+        targetSdk 31
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
         }
     }
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
 }
