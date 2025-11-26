@@ -4,9 +4,9 @@ workflows:
     scripts:
       - name: Install Gradle
         script: |
-          wget -q https://services.gradle.org/distributions/gradle-8.0-bin.zip
-          unzip -q gradle-8.0-bin.zip
-          export PATH=$PWD/gradle-8.0/bin:$PATH
+          wget -q https://services.gradle.org/distributions/gradle-7.5-bin.zip
+          unzip -q gradle-7.5-bin.zip
+          export PATH=$PWD/gradle-7.5/bin:$PATH
       - name: Build APK
         script: |
           gradle assembleDebug --stacktrace
