@@ -17,7 +17,3 @@ workflows:
           ./gradlew assembleRelease --stacktrace
     artifacts:
       - app/build/outputs/**/*.apk
-    publishing:
-      email:
-        recipients:
-          - $CM_EMAIL
