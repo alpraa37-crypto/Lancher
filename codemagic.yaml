@@ -1,19 +1,20 @@
 workflows:
-  android-release:
+  android:
     name: Build Android APK
     max_build_duration: 30
     environment:
       vars:
-        JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
-      android:
-        build: gradle
+        JAVA_VERSION: 17
     scripts:
+      - name: Set up Java
+        script: |
+          sudo update-java-alternatives --set java-1.17.0-openjdk-amd64
       - name: Clean project
         script: |
           ./gradlew clean
-      - name: Build release APK
+      - name: Build APK
         script: |
-          ./gradlew assembleRelease
+          ./gradlew assembleRelease --stacktrace
     artifacts:
       - app/build/outputs/**/*.apk
     publishing:
